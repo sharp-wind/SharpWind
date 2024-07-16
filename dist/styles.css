@@ -558,6 +558,10 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -568,6 +572,10 @@ video {
 
 .top-0 {
   top: 0px;
+}
+
+.top-\[56px\] {
+  top: 56px;
 }
 
 .z-\[100\] {
@@ -582,32 +590,40 @@ video {
   margin-left: 4px;
 }
 
-.mt-\[80px\] {
-  margin-top: 80px;
+.mt-\[104px\] {
+  margin-top: 104px;
 }
 
 .flex {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-\[120px\] {
+  height: 120px;
+}
+
 .h-\[3200px\] {
   height: 3200px;
 }
 
-.h-\[64px\] {
-  height: 64px;
+.h-\[80px\] {
+  height: 80px;
 }
 
-.h-\[90px\] {
-  height: 90px;
+.w-\[120px\] {
+  width: 120px;
 }
 
 .w-\[90\%\] {
   width: 90%;
-}
-
-.w-\[90px\] {
-  width: 90px;
 }
 
 .w-fit {
@@ -651,12 +667,12 @@ video {
   gap: 32px;
 }
 
-.gap-\[8px\] {
-  gap: 8px;
-}
-
 .gap-\[4px\] {
   gap: 4px;
+}
+
+.gap-\[8px\] {
+  gap: 8px;
 }
 
 .overflow-hidden {
@@ -667,8 +683,20 @@ video {
   white-space: nowrap;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-\[1px\] {
   border-width: 1px;
+}
+
+.border-\[4px\] {
+  border-width: 4px;
+}
+
+.border-\[rgba\(20\2c 120\2c 150\2c 0\.7\)\] {
+  border-color: rgba(20,120,150,0.7);
 }
 
 .border-white {
@@ -696,11 +724,6 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -753,6 +776,28 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-0 {
+  transition-delay: 0s;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   /* font-family: 'Cinzel', serif; */
   font-family: 'Cinzel Decorative', serif;
@@ -772,7 +817,7 @@ body {
 
 .quick-nav:hover {
   color: rgba(200, 170, 110,0.2);
-  background-color: rgba(200, 170, 110, 0.1);
+  /* background-color: rgba(200, 170, 110, 0.1); */
   -webkit-text-stroke-width: 0.7px;
   -webkit-text-stroke-color: rgb(200, 170, 110);
 }
@@ -780,6 +825,10 @@ body {
 .team-text {
   color: white;
   text-shadow: 0 0 10px skyblue;
+}
+
+.group:hover .group-hover\:block {
+  display: block;
 }
 
 @media not all and (min-width: 1024px) {
@@ -791,9 +840,5 @@ body {
 @media not all and (min-width: 768px) {
   .max-md\:hidden {
     display: none;
-  }
-
-  .max-md\:flex-col {
-    flex-direction: column;
   }
 }

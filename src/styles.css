@@ -22,7 +22,7 @@ body {
 
 .quick-nav:hover {
     color: rgba(200, 170, 110,0.2);
-    background-color: rgba(200, 170, 110, 0.1);
+    /* background-color: rgba(200, 170, 110, 0.1); */
     -webkit-text-stroke-width: 0.7px;
     -webkit-text-stroke-color: rgb(200, 170, 110);
 }
