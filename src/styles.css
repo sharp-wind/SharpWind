@@ -14,12 +14,16 @@ body {
 
 .quick-nav {
     padding: 8px;
+    font-size: 22px;
     border-radius: 12px;
     cursor: pointer;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    white-space: nowrap;
 }
 
 .quick-nav:hover {
-    color: rgb(200, 170, 110);
-    background-color: rgba(200, 170, 110, 0.05);
+    color: black;
+    background-color: rgba(200, 170, 110, 0.1);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(200, 170, 110);
 }

@@ -562,14 +562,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
-.top-\[80px\] {
-  top: 80px;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -580,6 +572,19 @@ video {
 
 .z-\[100\] {
   z-index: 100;
+}
+
+.mx-\[2px\] {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.mb-\[12px\] {
+  margin-bottom: 12px;
+}
+
+.mt-\[2px\] {
+  margin-top: 2px;
 }
 
 .mt-\[80px\] {
@@ -598,8 +603,29 @@ video {
   height: 64px;
 }
 
+.h-\[90px\] {
+  height: 90px;
+}
+
+.w-\[65\%\] {
+  width: 65%;
+}
+
+.w-\[90px\] {
+  width: 90px;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-full {
   width: 100%;
+}
+
+.min-w-\[320px\] {
+  min-width: 320px;
 }
 
 .flex-col {
@@ -626,18 +652,80 @@ video {
   gap: 8px;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.border-\[2px\] {
+  border-width: 2px;
+}
+
+.border-\[rgb\(10\2c 20\2c 40\)\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(10 20 40 / var(--tw-border-opacity));
+}
+
+.bg-\[rgb\(10\2c 20\2c 40\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 20 40 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(200\2c 170\2c 110\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 170 110 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.p-\[4px\] {
+  padding: 4px;
 }
 
 .p-\[8px\] {
   padding: 8px;
 }
 
+.text-\[32px\] {
+  font-size: 32px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
+}
+
+.font-\[32px\] {
+  font-weight: 32px;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.shadow-\[0_0_0_1px_white\] {
+  --tw-shadow: 0 0 0 1px white;
+  --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 body {
@@ -650,12 +738,16 @@ body {
 
 .quick-nav {
   padding: 8px;
+  font-size: 22px;
   border-radius: 12px;
   cursor: pointer;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  white-space: nowrap;
 }
 
 .quick-nav:hover {
-  color: rgb(200, 170, 110);
-  background-color: rgba(200, 170, 110, 0.05);
+  color: black;
+  background-color: rgba(200, 170, 110, 0.1);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(200, 170, 110);
 }

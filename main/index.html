@@ -9,13 +9,15 @@
         <link href="../dist/styles.css" rel="stylesheet">
         <link href="../src/styles.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-[rgb(10,20,40)]">
         <header class="fixed top-0 left-0 w-full z-[100]">
             <div class="site-top w-full h-[64px] p-[8px] bg-black justify-between text-white flex">
                 <!-- 사이트 헤더 블럭 -->
-                <div class="top-left flex items-center">
-                    <div class="site-logo"></div>
-                    <a href="index.html" class="site-name">칼바람</a> 
+                <div class="top-left flex items-center overflow-hidden">
+                    <a href="index.html" class="site-logo">
+                        <img src="../images/SharpWind-logo-final.png" class="h-[90px] w-[90px]">
+                    </a>
+                    <!-- <a href="index.html" class="site-name">칼바람</a>  -->
                 </div>
                 <div class="top-right flex">
                     <div class="top-nav flex">
@@ -24,30 +26,42 @@
                                 Top
                             </div>
                             <div class="quick-nav nav2">
-                                멤버 소개
+                                Our Members
                             </div>
                             <div class="quick-nav nav3">
-                                방명록
+                                Visitor's Comments
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        <main>
-            <div class="site-main relative mt-[80px] items-center flex flex-col gap-[32px] h-[3200px]">
+        <main class="flex justify-center text-white">
+            <div class="site-main relative mt-[80px] min-w-[320px] w-[65%] items-center flex flex-col gap-[32px] h-[3200px]">
                 <!-- 사이트 메인 블럭 -->
-                <div class="introduce-team">
+                <label class="text-white text-shadow-[0_0_3px_black] text-[32px]"
+                style="-webkit-text-stroke-width: 0.9px; -webkit-text-stroke-color: rgba(115, 175, 255, 1)">
+                    Welcome to Freljord
+                </label>
+                <div class="flex w-full justify-between gap-[32px]">
                     <!-- 팀 소개 -->
-                    <div>
-                        <div class="box-name">
-                            팀 이름 : 칼바람
+                    <div class="flex flex-col">
+                        <label class="w-fit mt-[2px] mx-[2px] mb-[12px] p-[4px] border-[2px] border-[rgb(10,20,40)] shadow-[0_0_0_1px_white] bg-[rgb(200,170,110)] text-black font-semibold">
+                            Team Introduce
+                        </label>
+                        <div class="">
+                            Team Name : 칼바람
                         </div>
-                        <div class="box-description">
-                            칼바람을 이겨내지 못하면 나락에 간다.
+                        <div class="">
+                            <div>
+                                칼바람을 이겨내지 못하면 나락행 뿐이다.
+                            </div>
                         </div>
                     </div>
-                    <div class="box-rule">
+                    <div class="flex flex-col">
+                        <label class="w-fit mt-[2px] mx-[2px] mb-[12px] p-[4px] border-[2px] border-[rgb(10,20,40)] shadow-[0_0_0_1px_white] bg-[rgb(200,170,110)] text-black font-semibold">
+                            Our Rules
+                        </label>
                         <div>- 스크럼 회의 : 9 : 00 ~ 10 : 00</div>
                         <div>- 점심시간 : 12 : 00 ~ 13 : 00</div>
                         <div>- 저녁시간 : 18 : 30 ~ 19 : 30</div>
