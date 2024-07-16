@@ -17,11 +17,11 @@
                     <a href="index.html" class="site-logo">
                         <img src="../images/SharpWind-logo-final.png" class="h-[90px] w-[90px]">
                     </a>
-                    <!-- <a href="index.html" class="site-name">칼바람</a>  -->
                 </div>
+                
                 <div class="top-right flex">
                     <div class="top-nav flex">
-                        <div class="nav-wrapper flex gap-[8px] items-center">
+                        <div class="nav-wrapper flex gap-[8px] items-center max-md:hidden">
                             <div class="quick-nav nav1">
                                 Top
                             </div>
@@ -37,34 +37,52 @@
             </div>
         </header>
         <main class="flex justify-center text-white">
-            <div class="site-main relative mt-[80px] min-w-[320px] w-[65%] items-center flex flex-col gap-[32px] h-[3200px]">
+            <div class="site-main relative mt-[80px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
                 <!-- 사이트 메인 블럭 -->
-                <label class="text-white text-shadow-[0_0_3px_black] text-[32px]"
+                <label class="text-white text-[32px]"
                 style="-webkit-text-stroke-width: 0.9px; -webkit-text-stroke-color: rgba(115, 175, 255, 1)">
                     Welcome to Freljord
                 </label>
-                <div class="flex w-full justify-between gap-[32px]">
+                <div class="flex p-[32px] min-w-[424px] w-full justify-center gap-[32px] bg-cover max-lg:flex-col"
+                style="background-image: url(../images/bg-image02.jpg);">
                     <!-- 팀 소개 -->
-                    <div class="flex flex-col">
-                        <label class="w-fit mt-[2px] mx-[2px] mb-[12px] p-[4px] border-[2px] border-[rgb(10,20,40)] shadow-[0_0_0_1px_white] bg-[rgb(200,170,110)] text-black font-semibold">
-                            Team Introduce
-                        </label>
-                        <div class="">
-                            Team Name : 칼바람
+                    <div class="flex flex-col min-w-[360px] w-full p-[14px] bg-[rgba(72,72,72,0.5)]">
+                        <div class="flex w-fit mb-2 p-[2px] items-center justify-center align-middle border-[1px] border-white bg-[rgba(0,0,0,0)]">
+                            <label class="w-fit p-[4px] bg-[rgba(200,170,110,0.3)] text-white font-semibold"
+                            style="text-shadow: 0 0 3px black;">
+                                Team Introduce
+                            </label>
+                        </div>
+                        <div class="text-[32px] text-black flex font-semibold"
+                        style="text-shadow: 0 0 3px white;">
+                            Team Name : 
+                            <label class="ml-[4px] text-white font-medium" style="text-shadow: 0 0 3px black;">
+                                칼바람
+                            </label>
                         </div>
                         <div class="">
-                            <div>
-                                칼바람을 이겨내지 못하면 나락행 뿐이다.
+                            <div class="team-text">
+                                <label>
+                                    칼바람을 이겨내지 못하면 나락행 뿐이다.
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col">
-                        <label class="w-fit mt-[2px] mx-[2px] mb-[12px] p-[4px] border-[2px] border-[rgb(10,20,40)] shadow-[0_0_0_1px_white] bg-[rgb(200,170,110)] text-black font-semibold">
-                            Our Rules
-                        </label>
-                        <div>- 스크럼 회의 : 9 : 00 ~ 10 : 00</div>
-                        <div>- 점심시간 : 12 : 00 ~ 13 : 00</div>
-                        <div>- 저녁시간 : 18 : 30 ~ 19 : 30</div>
+                    <div class="flex flex-col min-w-[360px] w-full p-[14px] bg-[rgba(72,72,72,0.5)]">
+                        <div class="flex w-fit mb-2 p-[2px] items-center justify-center align-middle border-[1px] border-white bg-[rgba(0,0,0,0)]">
+                            <label class="w-fit p-[4px] bg-[rgba(200,170,110,0.3)] text-white font-semibold"
+                            style="text-shadow: 0 0 3px black;">
+                                Our Rules
+                            </label>
+                        </div>
+                        <div class="team-text flex flex-col">
+                            <label>- 스크럼 회의 : 9 : 00 ~ 10 : 00</label>
+                            <label>- 점심시간 : 12 : 00 ~ 13 : 00</label>
+                            <label>- 저녁시간 : 18 : 30 ~ 19 : 30</label>
+                            <label>- 모르는 것은 질문하자!</label>
+                            <label>- 코드 작성 시 작업내용을 명확히 명시하자!</label>
+                            <label>- 질문 받은 것은 다 함께 고민하자!</label>
+                        </div>
                     </div>
                 </div>
                 <div class="">
