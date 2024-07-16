@@ -10,16 +10,16 @@
         <link href="../src/styles.css" rel="stylesheet">
     </head>
     <body>
-        <header class="z-[100">
-            <div class="site-top w-full h-[64px] py-[8px] bg-black justify-between text-white flex">
+        <header class="fixed top-0 left-0 w-full z-[100]">
+            <div class="site-top w-full h-[64px] p-[8px] bg-black justify-between text-white flex">
                 <!-- 사이트 헤더 블럭 -->
-                <div class="top-left">
+                <div class="top-left flex items-center">
                     <div class="site-logo"></div>
                     <a href="index.html" class="site-name">칼바람</a> 
                 </div>
-                <div class="top-right">
-                    <div class="top-nav">
-                        <div class="nav-wrapper flex gap-[8px]">
+                <div class="top-right flex">
+                    <div class="top-nav flex">
+                        <div class="nav-wrapper flex gap-[8px] items-center">
                             <div class="quick-nav nav1">
                                 Top
                             </div>
@@ -35,9 +35,10 @@
             </div>
         </header>
         <main>
-            <div class="site-main">
+            <div class="site-main relative mt-[80px] items-center flex flex-col gap-[32px] h-[3200px]">
                 <!-- 사이트 메인 블럭 -->
                 <div class="introduce-team">
+                    <!-- 팀 소개 -->
                     <div>
                         <div class="box-name">
                             팀 이름 : 칼바람
@@ -51,6 +52,13 @@
                         <div>- 점심시간 : 12 : 00 ~ 13 : 00</div>
                         <div>- 저녁시간 : 18 : 30 ~ 19 : 30</div>
                     </div>
+                </div>
+                <div class="">
+                    <!-- 멤버 소개 -->
+                    멤버 소개
+                </div>
+                <div class="">
+                    <!-- 방명록 -->
                 </div>
             </div>
         </main>
