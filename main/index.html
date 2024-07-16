@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>칼바람</title>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <header>
-
+        <header class="z-[100]">
+            <div class="site-top w-full h-[64px] py-[8px] bg-black justify-between text-white flex">
+                <!-- 사이트 헤더 블럭 -->
+                <div class="top-left">
+                    <div class="site-logo"></div>
+                    <a href="index.html" class="site-name">칼바람</a> 
+                </div>
+                <div class="top-right">
+                    <div class="top-nav">
+                        <div class="nav-wrapper flex gap-[8px]">
+                            <div class="quick-nav nav1">
+                                Top
+                            </div>
+                            <div class="quick-nav nav2">
+                                멤버 소개
+                            </div>
+                            <div class="quick-nav nav3">
+                                방명록
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
         <main>
-
+            <div class="site-main">
+                <!-- 사이트 메인 블럭 -->
+                <div class="introduce-team">
+                    <div>
+                        <div class="box-name">
+                            팀 이름 : 칼바람
+                        </div>
+                        <div class="box-description">
+                            칼바람을 이겨내지 못하면 나락에 간다.
+                        </div>
+                    </div>
+                    <div class="box-rule">
+                        <div>- 스크럼 회의 : 9 : 00 ~ 10 : 00</div>
+                        <div>- 점심시간 : 12 : 00 ~ 13 : 00</div>
+                        <div>- 저녁시간 : 18 : 30 ~ 19 : 30</div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
-
+            <!-- 방명록 -->
         </footer>
     </body>
 </html>

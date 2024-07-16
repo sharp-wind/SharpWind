@@ -1,0 +1,81 @@
+body {
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Cinzel Decorative', serif;
+    margin: 0px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.site-top {
+    display: flex;
+    padding : 8px;
+    width: 100%;
+    height: 64px;
+    background-color: black;
+    justify-content: space-between;
+    color: white;
+    vertical-align: middle;
+}
+
+.top-left {
+    margin-block: auto;
+    margin-inline: 12px;
+}
+
+.site-name {
+    text-decoration: none;
+    text-decoration-color: none;
+    color: white;
+    font-size: 22px;
+}
+
+.top-right {
+    display: flex;
+    margin-inline: 12px;
+}
+
+.top-nav {
+    display: flex;
+    margin: auto;
+
+}
+
+.nav-wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+
+.quick-nav {
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.quick-nav:hover {
+    color: rgb(200, 170, 110);
+    background-color: rgba(200, 170, 110, 0.05);
+}
+
+main {
+    position: absolute;
+    top : 80px;
+    height: 3200px;
+    width: 600px;
+}
+
+.site-main {
+    position: relative;
+    color: black;
+    display: flex;
+}
+
+
+.introduce-team {
+    display: flex;
+}
