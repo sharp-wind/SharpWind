@@ -33,6 +33,26 @@ body {
     font-size: 20px;
 }
 
+.member-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+}
+
+.member-card {
+    margin: auto;
+    width: 400px;
+    height: 280px;
+    border: 2px;
+    border-color: white;
+    border-radius: 8px;
+    
+    /* m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px] */
+}
+
+
+
 @media (max-width: 1280px) {
     .team-text {
         font-size: 24px;
@@ -43,7 +63,4 @@ body {
     .team-text {
         font-size: 16px;
     }
-}
-.member-card {
-    width: 16   0px;
 }
