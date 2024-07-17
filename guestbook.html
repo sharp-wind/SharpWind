@@ -14,40 +14,18 @@
         * {
             font-family: 'Cinzel Decorative', serif;
         }
-
-        .password {
+        /*비밀번호입력하는 폼길이조절입니다.*/
+        .password-form {
             width: 200px;
         }
 
-        .mytitle {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-image: url('https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-position: center;
-            background-size: cover;
-            color: white;
-            height: 250px;
-            background-color: green;
-        }
-
-        .mytitle>button {
-            width: 150px;
-            height: 50px;
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .mycards {
+        /*방명록*/
+        .guestbook {
             width: 1200px;
             margin: 30px auto 0px auto;
         }
-
-        .mypostingbox {
+        /*방명록 생성폼*/
+        .guestbook-entry-form {
             width: 500px;
             margin: 30px auto 0px auto;
             padding: 20px;
@@ -55,15 +33,26 @@
             border-radius: 5px;
             background-color: transparent;
         }
-
-        .mybtn {
+        /*방명록 생성폼 기록하기버튼과 새로고침버튼*/
+        .guestbook-entry-form-btn {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
-
-        .btn-edit {
+        /*각방명록마다 존재하는 수정버튼*/
+        .guestbook-retouch-btn {
+            border-color: white;
+            width: fit-content;
+            padding: 4px;
+            background-color: rgba(200, 170, 110, 0.3);
+            color: white;
+            font-weight: 600;
+            /* Equivalent to 'font-semibold' */
+            text-shadow: 0 0 3px black;
+        }
+        /*각방명록마다 존재하는 삭제버튼*/
+        .guestbook-delete-btn {
             border-color: white;
             width: fit-content;
             padding: 4px;
@@ -74,18 +63,7 @@
             text-shadow: 0 0 3px black;
         }
 
-        .btn-delete {
-            border-color: white;
-            width: fit-content;
-            padding: 4px;
-            background-color: rgba(200, 170, 110, 0.3);
-            color: white;
-            font-weight: 600;
-            /* Equivalent to 'font-semibold' */
-            text-shadow: 0 0 3px black;
-        }
-
-        .mybtn>button {
+        .guestbook-entry-form-btn>button {
 
             margin-right: 5px;
         }
@@ -93,7 +71,7 @@
 </head>
 
 <body>
-    <div class="mypostingbox" id="postingbox">
+    <div class="guestbook-form" id="postingbox">
         <div class="form-floating mb-3">
             <input class="form-control" id="name" placeholder="작성자 이름">
             <label for="name">작성자 이름 입력</label>
@@ -110,12 +88,12 @@
             <textarea class="form-control" id="content" placeholder="내용" style="height: 100px;"></textarea>
             <label for="content">내용 입력</label>
         </div>
-        <div class="mybtn">
+        <div class="guestbook-form-btn">
             <button id="guestbook" type="button" class="btn btn-primary">기록하기</button>
             <button type="button" class="btn btn-outline-dark" onclick="window.location.reload()">새로고침</button>
         </div>
     </div>
-    <div class="mycards" id="guestbook-entries"></div>
+    <div class="guestbook" id="guestbook-entries"></div>
 
     <script type="module">
         // Firebase SDK 라이브러리 가져오기
@@ -165,10 +143,10 @@
                 let date = data.date.toDate(); // 타임스탬프를 Date 객체로 변환
                 let formattedDate = date.toLocaleString(); // 읽기 쉬운 형식으로 변환
                 entriesHtml += `
-                    <div class="card my-3">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">${data.title}</h5>
-                            <h6 class="card-subtitle mb-2">${formattedDate} - <span class="">${data.name}</span></h6>
+                            <h6 class="card-subtitle">${formattedDate} - ${data.name}</h6>
                             <p class="card-text">${data.content}</p>
                             <input type="password" class="password form-control my-2" placeholder="비밀번호 입력" id="password-${doc.id}">
                             <button class="btn btn-edit" data-id="${doc.id}">수정</button>
