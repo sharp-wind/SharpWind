@@ -755,6 +755,11 @@ video {
   border-color: rgba(20,120,150,0.7);
 }
 
+.border-sky-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -919,6 +924,7 @@ body {
 
 .member-card {
   background-color: black;
+  border-radius: 8px;
 }
 
 @media (max-width: 1280px) {
