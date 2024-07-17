@@ -40,15 +40,19 @@ body {
     gap: 12px;
 }
 
-.member-card {
+/* .member-card {
     margin: auto;
     width: 400px;
     height: 280px;
     border: 2px;
     border-color: white;
     border-radius: 8px;
-    
-    /* m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px] */
+    padding: 8px;
+} */
+
+.member-card {
+    background-color: black;
+    border-radius: 8px;
 }
 
 

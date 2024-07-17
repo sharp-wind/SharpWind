@@ -735,10 +735,6 @@ video {
   border-radius: 8px;
 }
 
-.rounded-\[12px\] {
-  border-radius: 12px;
-}
-
 .border {
   border-width: 1px;
 }
@@ -812,10 +808,6 @@ video {
 
 .p-\[8px\] {
   padding: 8px;
-}
-
-.p-\[12px\] {
-  padding: 12px;
 }
 
 .align-middle {
@@ -915,6 +907,20 @@ body {
   gap: 12px;
 }
 
+/* .member-card {
+    margin: auto;
+    width: 400px;
+    height: 280px;
+    border: 2px;
+    border-color: white;
+    border-radius: 8px;
+    padding: 8px;
+} */
+
+.member-card {
+  background-color: black;
+}
+
 @media (max-width: 1280px) {
   .team-text {
     font-size: 24px;
@@ -925,10 +931,6 @@ body {
   .team-text {
     font-size: 16px;
   }
-}
-
-.member-card {
-  width: 16   0px;
 }
 
 .group:hover .group-hover\:block {
