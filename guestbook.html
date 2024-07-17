@@ -14,6 +14,7 @@
         * {
             font-family: 'Cinzel Decorative', serif;
         }
+
         /*비밀번호입력하는 폼길이조절입니다.*/
         .password-form {
             width: 200px;
@@ -24,6 +25,7 @@
             width: 1200px;
             margin: 30px auto 0px auto;
         }
+
         /*방명록 생성폼*/
         .guestbook-entry-form {
             width: 500px;
@@ -33,6 +35,7 @@
             border-radius: 5px;
             background-color: transparent;
         }
+
         /*방명록 생성폼 기록하기버튼과 새로고침버튼*/
         .guestbook-entry-form-btn {
             display: flex;
@@ -40,8 +43,9 @@
             align-items: center;
             justify-content: center;
         }
+
         /*각방명록마다 존재하는 수정버튼*/
-        .guestbook-retouch-btn {
+        .btn-edit {
             border-color: white;
             width: fit-content;
             padding: 4px;
@@ -51,8 +55,9 @@
             /* Equivalent to 'font-semibold' */
             text-shadow: 0 0 3px black;
         }
+
         /*각방명록마다 존재하는 삭제버튼*/
-        .guestbook-delete-btn {
+        .btn-delete {
             border-color: white;
             width: fit-content;
             padding: 4px;
@@ -71,7 +76,7 @@
 </head>
 
 <body>
-    <div class="guestbook-form" id="postingbox">
+    <div class="guestbook-entry-form" id="postingbox">
         <div class="form-floating mb-3">
             <input class="form-control" id="name" placeholder="작성자 이름">
             <label for="name">작성자 이름 입력</label>
@@ -88,7 +93,7 @@
             <textarea class="form-control" id="content" placeholder="내용" style="height: 100px;"></textarea>
             <label for="content">내용 입력</label>
         </div>
-        <div class="guestbook-form-btn">
+        <div class="guestbook-entry-form-btn">
             <button id="guestbook" type="button" class="btn btn-primary">기록하기</button>
             <button type="button" class="btn btn-outline-dark" onclick="window.location.reload()">새로고침</button>
         </div>
@@ -98,7 +103,7 @@
     <script type="module">
         // Firebase SDK 라이브러리 가져오기
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc,orderBy, query  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
         // Firebase 구성 정보 설정
         const firebaseConfig = {
@@ -135,24 +140,24 @@
         });
 
         async function loadGuestbookEntries() {
-            const guestbookRef=collection(db,"guestbook");
-            const docs = await getDocs(query(guestbookRef, orderBy("date","desc")));
+            const guestbookRef = collection(db, "guestbook");
+            const docs = await getDocs(query(guestbookRef, orderBy("date", "desc")));
             let entriesHtml = '';
             docs.forEach((doc) => {
                 let data = doc.data();
                 let date = data.date.toDate(); // 타임스탬프를 Date 객체로 변환
                 let formattedDate = date.toLocaleString(); // 읽기 쉬운 형식으로 변환
                 entriesHtml += `
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">${data.title}</h5>
-                            <h6 class="card-subtitle">${formattedDate} - ${data.name}</h6>
-                            <p class="card-text">${data.content}</p>
-                            <input type="password" class="password form-control my-2" placeholder="비밀번호 입력" id="password-${doc.id}">
-                            <button class="btn btn-edit" data-id="${doc.id}">수정</button>
-                            <button class="btn btn-delete" data-id="${doc.id}">삭제</button>
-                        </div>
-                    </div>
+                    <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">${data.title}</h5>
+                    <h6 class="card-subtitle mb-2">${formattedDate} - <span class="">${data.name}</span></h6>
+                    <p class="card-text">${data.content}</p>
+                    <input type="password" class="password form-control my-2" placeholder="비밀번호 입력" id="password-${doc.id}">
+                    <button class="btn btn-edit" data-id="${doc.id}">수정</button>
+                    <button class="btn btn-delete" data-id="${doc.id}">삭제</button>
+                </div>
+            </div>
                 `;
             });
             document.getElementById("guestbook-entries").innerHTML = entriesHtml;
