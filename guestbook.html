@@ -120,7 +120,7 @@
     <script type="module">
         // Firebase SDK 라이브러리 가져오기
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc,orderBy, query  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
         // Firebase 구성 정보 설정
         const firebaseConfig = {
@@ -157,7 +157,8 @@
         });
 
         async function loadGuestbookEntries() {
-            let docs = await getDocs(collection(db, "guestbook"));
+            const guestbookRef=collection(db,"guestbook");
+            const docs = await getDocs(query(guestbookRef, orderBy("date","desc")));
             let entriesHtml = '';
             docs.forEach((doc) => {
                 let data = doc.data();
