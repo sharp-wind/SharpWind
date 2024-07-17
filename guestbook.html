@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 구현</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: "Gowun Dodum", sans-serif;
+        }
+        .password{
+            width: 200px;
+        }
+        .mytitle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-position: center;
+            background-size: cover;
+            color: white;
+            height: 250px;
+            background-color: green;
+        }
+
+        .mytitle>button {
+            width: 150px;
+            height: 50px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .mycards {
+            width: 1200px;
+            margin: 30px auto 0px auto;
+        }
+
+        .mypostingbox {
+            width: 500px;
+            margin: 30px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 5px 0px blue;
+            border-radius: 5px;
+        }
+
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mybtn>button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mypostingbox" id="postingbox">
+        <div class="form-floating mb-3">
+            <input class="form-control" id="name" placeholder="작성자 이름">
+            <label for="name">작성자 이름 입력</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="제목">
+            <label for="password">비밀번호 입력</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="title" placeholder="제목">
+            <label for="title">제목 입력</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="content" placeholder="내용" style="height: 100px;"></textarea>
+            <label for="content">내용 입력</label>
+        </div>
+        <div class="mybtn">
+            <button id="guestbook" type="button" class="btn btn-primary">기록하기</button>
+            <button type="button" class="btn btn-outline-dark" onclick="window.location.reload()">닫기</button>
+        </div>
+    </div>
+    <div class="mycards" id="guestbook-entries"></div>
+
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    
+        // Firebase 구성 정보 설정
+        const firebaseConfig = {
+            apiKey: "AIzaSyAKylteJBCVCJpvE4ILvOasBoBJYE1fuCc",
+            authDomain: "sparta-ecc7c.firebaseapp.com",
+            projectId: "sparta-ecc7c",
+            storageBucket: "sparta-ecc7c.appspot.com",
+            messagingSenderId: "358776364318",
+            appId: "1:358776364318:web:da316a5aa0631766153d0f",
+            measurementId: "G-8LG1X04864"
+        };
+    
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+        document.getElementById("guestbook").addEventListener("click", async () => {
+            let name = $('#name').val();
+            let title = $('#title').val();
+            let password = $('#password').val();
+            let date = new Date(); //현재시간을 date변수에 대입
+            let content = $('#content').val();
+    
+            let doc = {
+                name: name,
+                title: title,
+                password: password,
+                date: date,
+                content: content
+            };
+            await addDoc(collection(db, "guestbook"), doc);
+            alert('저장 완료');
+            window.location.reload();
+        });
+    
+        async function loadGuestbookEntries() {
+            let docs = await getDocs(collection(db, "guestbook"));
+            let entriesHtml = '';
+            docs.forEach((doc) => {
+                let data = doc.data();
+                let date = data.date.toDate(); // 타임스탬프를 Date 객체로 변환
+                let formattedDate = date.toLocaleString(); // 읽기 쉬운 형식으로 변환
+                entriesHtml += `
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.title}</h5>
+                            <h6 class="card-subtitle mb-2">${formattedDate} - <span class="">${data.name}</span></h6>
+                            <p class="card-text">${data.content}</p>
+                            <input type="password" class="password form-control my-2" placeholder="비밀번호 입력" id="password-${doc.id}">
+                            <button class="btn btn-warning btn-edit" data-id="${doc.id}">수정</button>
+                            <button class="btn btn-danger btn-delete" data-id="${doc.id}">삭제</button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById("guestbook-entries").innerHTML = entriesHtml;
+    
+            document.querySelectorAll(".btn-delete").forEach(button => {
+                //quertSelectorAll메서드를 사용해 모든 btn-delete클래스를 가진 버튼요소들에 
+                //foreach문으로 이벤트리스너를 추가함
+            
+                button.addEventListener("click", async (event) => {
+                    //각버튼에 클릭 이벤트 리스너를 추가한다. 버튼이 클릭되면 비동기 함수가 실행됨
+                    let docId = event.target.getAttribute("data-id");
+                    //클릭된 버튼의 data-id 속성 값을 가져옴 이값은 파이어베이스 문서내에 존재하는 id입니다
+                    let passwordInput = document.getElementById(`password-${docId}`).value;
+                    //해당문서 id에 연결된 비밀번호 입력 필드의 값을 가져옴
+                    let docRef = doc(db, "guestbook", docId);
+                    //파이어베이스 문서를 참조하는 객체 하나 생성
+                    let docSnapshot = await getDoc(docRef);
+                    //파이어베이스 문서 데이터를 가져옴 getDoc메서드는 문서 스냅샷을 반환함
+                    if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
+                        //문서가 존재하고 문서의 비밀번호가 입력한 비밀번호와 같다면
+                        await deleteDoc(docRef);
+                        //해당문서를 삭제함
+                        alert("삭제 완료");
+                        //삭제 완료
+                        window.location.reload();
+                    } else {
+                        //비밀번호가 틀렸다면 비밀번호가 틀렸다는 alert가 나옴
+                        alert("비밀번호가 틀립니다");
+                    }
+                });
+            });
+    
+            document.querySelectorAll(".btn-edit").forEach(button => {
+                button.addEventListener("click", async (event) => {
+                    let docId = event.target.getAttribute("data-id");
+                    let passwordInput = document.getElementById(`password-${docId}`).value;
+                    let docRef = doc(db, "guestbook", docId);
+                    let docSnapshot = await getDoc(docRef);
+    
+                    if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
+                        let newContent = prompt("새로운 내용을 입력하세요", docSnapshot.data().content);
+                        //비밀번호가 같다면 새로운내용을 입력하라는 창이뜸 기존의 내용이 보임
+                        if (newContent !== null) {
+                            await updateDoc(docRef, { content: newContent });
+                            //updateDoc메서드를 사용해 파이어베이스 파이어스토어에서 해당문서의 내용을 업데이트함
+                            alert("수정 완료");
+                            window.location.reload();
+                        }
+                    } else {
+                        alert("비밀번호가 틀립니다");
+                    }
+                });
+            });
+        }
+    
+        loadGuestbookEntries();
+    </script>
+    
+</body>
+
+</html>
