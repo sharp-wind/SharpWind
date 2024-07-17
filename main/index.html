@@ -23,28 +23,28 @@
                 <div class="top-right flex">
                     <div class="top-nav flex">
                         <div class="relative nav-wrapper flex gap-[8px] items-center max-md:hidden">
-                            <div class="relative quick-nav nav1 group">
+                            <button id="btn-top" class="relative quick-nav nav1 group">
                                 Top
                                 <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
-                            </div>
-                            <div class="relative quick-nav nav2 group">
+                            </button>
+                            <button id="btn-om" class="relative quick-nav nav2 group">
                                 Our Members
                                 <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
-                            </div>
-                            <div class="relative quick-nav nav3 group">
+                            </button>
+                            <button id="btn-vc" class="relative quick-nav nav3 group">
                                 Visitor's Comments
                                 <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <main class="flex justify-center text-white">
-            <div class="site-main relative mt-[104px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
+            <div id="section-01" class="site-main relative mt-[104px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
                 <!-- 사이트 메인 블럭 -->
-                <label class="text-white text-[32px] whitespace-nowrap"
-                style="-webkit-text-stroke-width: 0.9px; -webkit-text-stroke-color: rgba(115, 175, 255, 1)">
+                <label class="text-white text-[6vw] whitespace-nowrap"
+                style="-webkit-text-stroke-width: 0.16vw; -webkit-text-stroke-color: rgba(115, 175, 255, 1)">
                     Welcome to Freljord
                 </label>
                 <div class="flex p-[32px] min-w-[424px] w-full justify-center gap-[32px] bg-cover max-1280:flex-col"
@@ -91,84 +91,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col w-full gap-[32px]">
+                <div id="section-02" class="flex flex-col w-full gap-[32px] mt-[230px]">
                     <!-- 멤버 소개란 -->
 
 
-                    <div class="h-[120px]"></div>
-
-                    <div class="member-container">
-                        <!-- 멤버카드 컨테이너 -->
-
-                        <div class="member-card w-[400px] h-[280px] m-auto p-[8px] border-[2px]" style="border-color: white">
-                            <!-- 멤버카드1 -->  
-                            <div>
-                                <!-- 내부 랲퍼 -->
-                                <div>
-                                    <!-- 왼쪽/프로필사진 -->
-                                </div>
-                                <div>
-                                    <!-- 오른쪽/멤버 정보 + 상세 페이지 이동 버튼 -->
-                                    <div>
-                                        <!-- 멤버 정보 -->
-                                        <div>
-                                            <!-- 멤버 이름 -->
-                                            <label>정원석</label>
-                                        </div>
-                                        <div>
-                                            <!-- MBTI -->
-                                            <label>INTP</label>
-                                        </div>
-                                        <div>
-                                            <!-- 인삿말 -->
-                                            <label>잘 부탁드립니다.</label>
-                                        </div>
-                                    </div>
-                                    <button>
-                                        <!-- 상페 페이지 이동 버튼 -->
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="flex w-full h-[120px] items-center justify-center">
+                        <div class="text-[64px]">Our Members</div>
                     </div>
+
                     
 
-
-
-
-                    <div class="grid grid-rows-2 grid-cols-3 gap-[12px] min-w-[424px] max-1280:grid-cols-2 max-1280:grid-rows-3 max-920:grid-cols-1 max-920:grid-rows-6">
+                    <div class="grid grid-rows-2 grid-cols-3 gap-[24px] min-w-[424px] max-1400:grid-cols-2 max-1400:grid-rows-3 max-920:grid-cols-1 max-920:grid-rows-6">
                         <!-- 화면 크기에 따라 그리드 배치 변환시키기(3:2 -> 2:3 -> 1:6) -->
                         <!-- 이너 래퍼 -->
 
 
                         <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
                             <!-- 멤버카드(멤버 정보 간단히 표시) -->
-                            <div class="flex w-full h-full">
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
                                 <!-- 이너래퍼 -->
-                                <div class="p-[8px] w-[180px] h-[220px]">
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
                                     <!-- 프로필사진(좌측) -->
                                 </div>
-                                <div class="flex flex-col p-[8px] h-full justify-between">
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
                                     <!-- 우측 컨테이너 -->
-                                    <div class="leading-[28px]">
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
                                         <!-- 멤버 정보 -->
-                                        <div class="flex gap-[3px]">
+                                        <div class="flex gap-[6px]">
                                             <!-- 멤버 이름 -->
-                                            <label>이름 : </label>
-                                            <label>정원석</label>
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">이길환</label>
                                         </div>
-                                        <div class="flex gap-[3px]">
+                                        <div class="flex gap-[6px]">
                                             <!-- 멤버 Mbti -->
-                                            <label>MBTI : </label>
-                                            <label>INTP</label>
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">ENTP</label>
                                         </div>
-                                        <div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
                                             <!-- 짧은 인삿말 -->
-                                            <label>잘 부탁드리겠습니다.</label>
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">화이팅!!!!!!!!</label>
                                         </div>
                                     </div>
-                                    <button class="rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer bg-black align-bottom">
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
                                         <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
                                         Go To Private
                                     </button>
@@ -176,9 +141,187 @@
                             </div>
                         </div>
 
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) -->
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정원석</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">잘 부탁드리겠습니다.</label>
+                                        </div>
+                                    </div>
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) -->
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정예림</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">잘부탁드려요</label>
+                                        </div>
+                                    </div>
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) -->
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">추종윤</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTJ</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">비전공자라 잘 부탁드리겠습니다.(꾸벅)</label>
+                                        </div>
+                                    </div>
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) -->
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정지윤</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">열심히 해보겠습니다.</label>
+                                        </div>
+                                    </div>
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) -->
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">오강욱</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">ENFJ</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">열심히 끝까지 해보겠습니다. 잘부탁드려용</label>
+                                        </div>
+                                    </div>
+                                    <button class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        
                     </div>
                 </div>
-                <div class="">
+                <div id="section-03" class="">
                     <!-- 방명록 -->
                 </div>
             </div>

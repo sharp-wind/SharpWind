@@ -40,19 +40,20 @@ body {
     gap: 12px;
 }
 
-/* .member-card {
-    margin: auto;
-    width: 400px;
-    height: 280px;
-    border: 2px;
-    border-color: white;
-    border-radius: 8px;
-    padding: 8px;
-} */
+.text-label {
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 0 3px black;
+}
 
-.member-card {
-    background-color: black;
-    border-radius: 8px;
+.text-description {
+    color: white;
+    text-shadow: 0 0 10px skyblue;
+}
+
+.member-btn:hover {
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: rgb(200, 170, 110);
 }
 
 @media (max-width: 1280px) {
