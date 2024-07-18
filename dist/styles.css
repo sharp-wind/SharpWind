@@ -603,6 +603,10 @@ video {
   margin-bottom: 2px;
 }
 
+.mb-\[320px\] {
+  margin-bottom: 320px;
+}
+
 .ml-\[2px\] {
   margin-left: 2px;
 }
@@ -637,6 +641,14 @@ video {
 
 .mt-\[32px\] {
   margin-top: 32px;
+}
+
+.mb-\[120px\] {
+  margin-bottom: 120px;
+}
+
+.mb-\[60px\] {
+  margin-bottom: 60px;
 }
 
 .flex {
