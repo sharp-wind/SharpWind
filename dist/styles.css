@@ -969,6 +969,10 @@ video {
   font-size: 22px;
 }
 
+.text-\[24px\] {
+  font-size: 24px;
+}
+
 .text-\[32px\] {
   font-size: 32px;
 }
@@ -1192,6 +1196,24 @@ body {
   animation: blink-text2 3s infinite;
 }
 
+.btn-page {
+  /* flex text-[32px] leading-[32px] gap-[4px] */
+  display: flex;
+  font-size: 32px;
+  line-height: 32px;
+  gap: 4px;
+  color: white;
+  text-shadow: 0 0 6px skyblue;
+  -webkit-text-stroke-width: 0.7px;
+  font-weight: 500;
+}
+
+.btn-page:hover {
+  text-shadow: 0 0 6px goldenrod;
+  color: black;
+  -webkit-text-stroke-color: goldenrod;
+}
+
 .hover\:bg-\[rgba\(0\2c 0\2c 0\2c 0\.8\)\]:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -1281,3 +1303,4 @@ body {
     align-items: center;
   }
 }
+
