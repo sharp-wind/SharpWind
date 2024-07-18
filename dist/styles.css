@@ -603,6 +603,10 @@ video {
   margin-bottom: 2px;
 }
 
+.mb-\[60px\] {
+  margin-bottom: 60px;
+}
+
 .ml-\[2px\] {
   margin-left: 2px;
 }
@@ -1171,6 +1175,24 @@ body {
   100% {
     box-shadow: 0 0 8px 3px skyblue;
   }
+}
+
+@keyframes blink-text-sky {
+  0% {
+    text-shadow: 0 0 3vw skyblue;
+  }
+
+  50% {
+    text-shadow: 0 0 3vw transparent;
+  }
+
+  100% {
+    text-shadow: 0 0 3vw skyblue;
+  }
+}
+
+.text-welcome {
+  animation: blink-text-sky 4s infinite;
 }
 
 .btn-submit {
