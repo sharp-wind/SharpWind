@@ -9,6 +9,7 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="../dist/styles.css" rel="stylesheet">
         <link href="../src/styles.css" rel="stylesheet">
     </head>
@@ -44,7 +45,7 @@
             </div>
         </header>
         <main class="flex justify-center text-white">
-            <div id="section-01" class="site-main relative mt-[104px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
+            <div id="section-01" class="site-main scroll-m-[104px] relative mt-[104px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
                 <!-- 사이트 메인 블럭 -->
                 <label class="text-white text-[6vw] whitespace-nowrap"
                 style="-webkit-text-stroke-width: 0.16vw; -webkit-text-stroke-color: rgba(115, 175, 255, 1)">
@@ -94,21 +95,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="section-02" class="flex flex-col w-full gap-[32px] mt-[230px]">
+                <div id="section-02" class="scroll-m-[104px] flex flex-col w-full gap-[32px] mt-[230px]">
                     <!-- 멤버 소개란 -->
-
-
                     <div class="flex w-full h-[120px] items-center justify-center">
                         <div class="text-[64px] whitespace-nowrap">Our Members</div>
                     </div>
-
-                    
-
                     <div class="grid grid-rows-2 grid-cols-3 gap-[24px] min-w-[424px] max-1400:grid-cols-2 max-1400:grid-rows-3 max-920:grid-cols-1 max-920:grid-rows-6">
                         <!-- 화면 크기에 따라 그리드 배치 변환시키기(3:2 -> 2:3 -> 1:6) -->
                         <!-- 이너 래퍼 -->
-
-
                         <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
                             <!-- 멤버카드(멤버 정보 간단히 표시) -->
                             <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
@@ -318,45 +312,68 @@
                                 </div>
                             </div>
                         </div>
-
-                        
-
-                        
                     </div>
                 </div>
-                <div id="section-03" class="">
+                <div id="section-03" class="scroll-m-[104px] w-full mt-[220px]">
                     <!-- 방명록 -->
-
-                    <div class="guestbook-entry-form" id="postingbox">
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" placeholder="작성자 이름">
-                            <label for="name">작성자 이름 입력</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" placeholder="제목">
-                            <label for="password">비밀번호 입력</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="title" placeholder="제목">
-                            <label for="title">제목 입력</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="content" placeholder="내용" style="height: 100px;"></textarea>
-                            <label for="content">내용 입력</label>
-                        </div>
-                        <div class="guestbook-entry-form-btn">
-                            <button id="guestbook" type="button" class="btn btn-primary">기록하기</button>
-                            <button type="button" class="btn btn-outline-dark" onclick="window.location.reload()">새로고침</button>
-                        </div>
+                    <div class="flex w-full my-[32px] text-[48px] text-white items-center justify-center whitespace-nowrap">
+                        <label>Visitor's Comments</label>
                     </div>
-                    <div class="guestbook" id="guestbook-entries"></div>
-
-                </div>
+                    <div class="guestbook-entry-form flex min-w-[480px] w-full h-[fit] gap-[8px]" id="postingbox">
+                        <div class="flex flex-col h-[140px] w-fit gap-[8px]">
+                            <!-- 이름/비밀번호 -->
+                            <div class="">
+                                <input class="input-shadow p-[6px] rounded-[6px] outline-none" id="name" placeholder="Visitor's Name">
+                            </div>
+                            <div class="">
+                                <input class="input-shadow p-[6px] rounded-[6px] outline-none" type="password" id="password" placeholder="Password">
+                            </div>
+                            <button class="btn-submit h-full w-full p-[4px] border-[2px] border-white bg-black text-white text-[22px] font-semibold rounded-[16px] whitespace-nowrap transition-all delay-0 duration-150 ease-in-out hover:bg-white" id="guestbook" type="button">submit</button>
+                        </div>
+                        <div class="flex flex-col h-[140px] w-full gap-[4px]">
+                            <div class="w-full">    
+                                <input class="input-shadow w-full p-[6px] rounded-[6px] outline-none" id="title" placeholder="Title">
+                            </div>
+                            <div class="h-full w-full">
+                                <textarea class="input-shadow h-full w-full p-[6px] rounded-[6px] outline-none" id="content" placeholder="Comments..."></textarea>
+                            </div>        
+                        </div>
+                        <button id="refresh" class="border-[2px] border-white rounded-[12px] bg-black text-white text-[22px] w-[68px] p-[3px] whitespace-nowrap group transition-all delay-50 duration-500 ease-in hover:bg-white hover:text-black" type="button">
+                            <i class="fas fa-sync-alt refresh-icon btn-refresh transition-all delay-50 duration-500 ease-in group-hover:rotate-180 group-hover:text-black"></i>
+                        </button>
+                        
+                    </div>
+                    <div class="guestbook flex flex-col w-full mt-[32px] gap-[8px]" id="guestbook-entries"></div>
+                </div>  
             </div>
         </main>
-        <footer>
-            <!-- 방명록 -->
-        </footer>
+
+        <script>
+            document.getElementById('btn-top').addEventListener('click', function() {
+                document.getElementById('section-01').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-om').addEventListener('click', function() {
+                document.getElementById('section-02').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-vc').addEventListener('click', function() {
+                document.getElementById('section-03').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const scrollPosition = localStorage.getItem("scrollPosition");
+                if (scrollPosition) {
+                    window.scrollTo(0, parseInt(scrollPosition, 10));
+                    localStorage.removeItem("scrollPosition"); // 위치를 복원한 후에는 저장된 위치 삭제
+                }
+            });
+
+            document.getElementById("refresh").addEventListener("click", function() {
+                localStorage.setItem("scrollPosition", window.scrollY);
+                window.location.reload();
+            });
+        </script>
 
         <script type="module">
             // Firebase SDK 라이브러리 가져오기
@@ -406,17 +423,34 @@
                     let date = data.date.toDate(); // 타임스탬프를 Date 객체로 변환
                     let formattedDate = date.toLocaleString(); // 읽기 쉬운 형식으로 변환
                     entriesHtml += `
-                        <div class="card my-3">
-                    <div class="card-body">
-                        <h5 class="card-title">${data.title}</h5>
-                        <h6 class="card-subtitle mb-2">${formattedDate} - <span class="">${data.name}</span></h6>
-                        <p class="card-text">${data.content}</p>
-                        <input type="password" class="password form-control my-2" placeholder="비밀번호 입력" id="password-${doc.id}">
-                        <button class="btn btn-edit" data-id="${doc.id}">수정</button>
-                        <button class="btn btn-delete" data-id="${doc.id}">삭제</button>
-                    </div>
-                </div>
-                    `;
+                        <div class="relative flex bg-[rgba(75,75,75,0.2)] border-[1px] border-[rgb(144,144,144,0.3)] p-[12px] rounded-[12px] max-">
+                            <div class="relative text-white flex w-full justify-between max-sd:flex-col max-sd:items-center">
+                                <div class="relative flex w-[calc(100%-210px)] mr-[12px] gap-[6px] max-sd:w-full">
+                                    <div class="relative flex flex-col w-full">
+                                        <div class="flex">
+                                            <div class="comments-name text-black whitespace-nowrap" style="-webkit-text-stroke-width: 0.6px; -webkit-text-stroke-color: white">[${data.name}]</div>
+                                            <div class="ml-[2px] text-[rgba(255,255,255,0.9)] whitespace-nowrap" style="text-shadow: 0 0 6px skyblue">'s comments</div>
+                                            <div class="ml-[32px]" style="text-shadow: 0 0 3px skyblue;"><${data.title}></div>
+                                        </div>
+                                        <div class="relative w-full h-full bg-[rgba(89,89,89,0.2)] text-[rgba(189,189,189,0.9)] px-[8px] py-[4px] rounded-[8px] whitespace-normal break-all">
+                                            ${data.content}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative flex flex-col w-[210px] gap-[4px] max-sd:w-full">
+                                    <div class="flex whitespace-nowrap">
+                                        ${formattedDate}
+                                        <div class="flex text-[9px] text-[rgba(144,144,144,0.7)] items-end">written</div>
+                                    </div>
+                                    <input class="input-shadow w-full mb-[2px] p-[6px] rounded-[6px] outline-none"" type="password" placeholder="password" id="password-${doc.id}">
+                                    <div class="grid grid-cols-2 gap-[12px]">
+                                        <button class="btn-edit w-full border-[1px] border-white bg-black p-[2px] rounded-[6px] hover:shadow-[0_0_6px_0_skyblue] hover:bg-white hover:text-black" data-id="${doc.id}">edit</button>
+                                        <button class="btn-delete w-full border-[1px] border-white bg-black p-[2px] rounded-[6px] hover:shadow-[0_0_6px_0_skyblue] hover:bg-white hover:text-black" data-id="${doc.id}">delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;  
                 });
                 document.getElementById("guestbook-entries").innerHTML = entriesHtml;
     

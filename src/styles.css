@@ -12,6 +12,10 @@ body {
     position: relative;
 }
 
+.section-03 {
+    color: black;
+}
+
 .quick-nav {
     padding: 8px;
     font-size: 22px;
@@ -67,4 +71,64 @@ body {
     .team-text {
         font-size: 16px;
     }
+}
+
+
+@keyframes blink-text {
+    0% {
+        text-shadow: 0 0 12px skyblue;
+    }
+    50% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+    100% {
+        text-shadow: 0 0 12px skyblue;
+    }
+}
+
+@keyframes blink-text2 {
+    0% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+    50% {
+        text-shadow: 0 0 22px transparent;
+    }
+    100% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+}
+
+@keyframes blink-box {
+    0% {
+        box-shadow: 0 0 8px 3px skyblue;
+    }
+    50% {
+        box-shadow: 0 0 8px 3px goldenrod;
+    }
+    100% {
+        box-shadow: 0 0 8px 3px skyblue;
+    }
+}
+
+.btn-submit {
+    animation: blink-box 3s infinite;
+}
+
+.btn-submit:hover {
+    animation: blink-text 3s infinite;
+}
+
+.input-shadow {
+    caret-color: rgba(255,255,255,0.5);
+    background-color: rgba(75,75,75,0.2);
+    border: 1px solid rgba(144,144,144,0.3);
+}
+
+.input-shadow:focus-visible {
+    animation: blink-box 3s infinite;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.comments-name {
+    animation: blink-text2 3s infinite;
 }
