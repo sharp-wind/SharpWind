@@ -458,6 +458,7 @@
                     //해당문서 이후의 문서를 가져오는 쿼리
                     q = query(guestbookRef, orderBy("date", "desc"), startAfter(lastVisibleDoc), limit(pagecount));
                 } else {
+                    //첫페이지라면 그냥 페이지내에서 보여주고자하는 갯수(pagecount)만큼만 가져옴
                     q = query(guestbookRef, orderBy("date", "desc"), limit(pagecount));
                 }
 
@@ -505,15 +506,22 @@
                         `;
                     });
                     document.getElementById("guestbook-entries").innerHTML = entriesHtml;
+                    //id가 guestbook-entries인 요소를 찾아 그요소의 innerHTML속성을 entriesHtml변수의 값으로 설정
+                    //간단하게 요약하면 위의 묶여있는 방명록들이 id가 guestbook-entries로 설정되어 html형식으로 붙여진다는 뜻이다.
     
                     document.querySelectorAll(".btn-delete").forEach(button => {
                         button.addEventListener("click", async (event) => {
+                            //btn-delete(삭제속성)을가진 버튼에 삭제기능을추가코드
                             let docId = event.target.getAttribute("data-id");
+                            //클릭된버튼의 "data-id"속성 값을 가져와 docId 변수에 저장
                             let passwordInput = document.getElementById(`password-${docId}`).value;
+                            //해당 문서id와 일치하는 비밀번호 입력필드의 값을가져옴
                             let docRef = doc(db, "guestbook", docId);
+                            //문서를참조
                             let docSnapshot = await getDoc(docRef);
-        
+                            
                             if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
+                                //해당스냅샷이 존재하고 비밀번호가 맞으면
                                 await deleteDoc(docRef);
                                 alert("삭제 완료");
                                 window.location.reload();
@@ -534,7 +542,9 @@
                             if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
                                 let newContent = prompt("새로운 내용을 입력하세요", docSnapshot.data().content);
                                 if (newContent !== null) {
+                                    //새내용은 비어있을수없음
                                     await updateDoc(docRef, { content: newContent });
+                                    //새내용을 받아와 doc을 업데이트
                                     alert("수정 완료");
                                     window.location.reload();
                                 }
