@@ -110,6 +110,22 @@ body {
     }
 }
 
+@keyframes blink-text-sky {
+    0% {
+        text-shadow: 0 0 3vw skyblue;
+    }
+    50% {
+        text-shadow: 0 0 3vw transparent;
+    }
+    100% {
+        text-shadow: 0 0 3vw skyblue;
+    }
+}
+
+.text-welcome {
+    animation: blink-text-sky 4s infinite;
+}
+
 .btn-submit {
     animation: blink-box 3s infinite;
 }
