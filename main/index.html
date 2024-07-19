@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>칼바람</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="../dist/styles.css" rel="stylesheet">
+        <link href="../src/styles.css" rel="stylesheet">
+    </head>
+    <body class="bg-[rgb(10,20,40)]">
+        <header class="fixed top-0 left-0 w-full z-[100]">
+            <div class="site-top w-full h-[80px] p-[8px] bg-black justify-between text-white flex">
+                <!-- 사이트 헤더 블럭 -->
+                <div class="top-left flex items-center overflow-hidden">
+                    <!-- 사이트 로고 아이콘 -->
+                    <a href="index.html" class="site-logo">
+                        <img src="../images/SharpWind-logo-final.png" class="h-[120px] w-[120px]">
+                    </a>
+                </div>
+                
+                <div class="top-right flex">
+                    <div class="top-nav flex">
+                        <div class="relative nav-wrapper flex gap-[8px] items-center max-md:hidden">
+                            <button id="btn-top" class="relative quick-nav nav1 group">
+                                Top
+                                <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
+                            </button>
+                            <button id="btn-om" class="relative quick-nav nav2 group">
+                                Our Members
+                                <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
+                            </button>
+                            <button id="btn-vc" class="relative quick-nav nav3 group">
+                                Visitor's Comments
+                                <div class="hidden absolute left-0 top-[56px] w-full border-[4px] transition-all delay-0 duration-150 ease-in-out border-[rgba(20,120,150,0.7)] group-hover:block"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex justify-center text-white">
+            <div id="section-01" class="site-main scroll-m-[104px] relative mt-[104px] min-w-[320px] w-[90%] items-center flex flex-col gap-[32px] h-[3200px]">
+                <!-- 사이트 메인 블럭 -->
+                <label class="text-welcome text-white text-[6vw] whitespace-nowrap"
+                style="-webkit-text-stroke-width: 0.16vw; -webkit-text-stroke-color: rgba(115, 175, 255, 1);">
+                    Welcome to Freljord
+                </label>
+                <div class="flex p-[32px] min-w-[424px] w-full justify-center gap-[32px] bg-cover max-1280:flex-col"
+                style="background-image: url(../images/bg-image02.jpg);">
+                    <!-- 팀 소개 -->
+                    <div class="flex flex-col min-w-[360px] w-full p-[14px] bg-[rgba(72,72,72,0.5)]">
+                        <div class="flex w-fit mb-2 p-[2px] items-center justify-center align-middle border-[1px] border-white bg-[rgba(0,0,0,0)]">
+                            <label class="w-fit p-[4px] bg-[rgba(200,170,110,0.3)] text-white font-semibold"
+                            style="text-shadow: 0 0 3px black;">
+                                Team Introduce
+                            </label>
+                        </div>
+                        <div class="text-[32px] text-black flex font-semibold"
+                        style="text-shadow: 0 0 3px white;">
+                            Team Name : 
+                            <label class="ml-[4px] text-white font-medium" style="text-shadow: 0 0 3px black;">
+                                칼바람
+                            </label>
+                        </div>
+                        <div class="">
+                            <div class="team-text w-full flex flex-col gap-[4px]">
+                                <label>하나, 칼바람이 불어도 꿋꿋하게 견뎌라.</label>
+                                <label>하나, 칼바람에 쓰러지는 팀원이 없도록 서로 이끌어라.</label>
+                                <label>하나, 서로 견디는 한, 우리는 나락가지 않는다.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col min-w-[360px] w-full p-[14px] bg-[rgba(72,72,72,0.5)]">
+                        <div class="flex w-fit mb-2 p-[2px] items-center justify-center align-middle border-[1px] border-white bg-[rgba(0,0,0,0)]">
+                            <label class="w-fit p-[4px] bg-[rgba(200,170,110,0.3)] text-white font-semibold"
+                            style="text-shadow: 0 0 3px black;">
+                                Our Rules
+                            </label>
+                        </div>
+                        <div class="team-text w-full flex flex-col gap-[4px]">
+                            <label>- 스크럼 회의 : 9 : 00 ~ 10 : 00</label>
+                            <label>- 점심시간 : 12 : 00 ~ 13 : 00</label>
+                            <label>- 저녁시간 : 18 : 30 ~ 19 : 30</label>
+                            <label>- 질문 전에 검색해보기</label>
+                            <label>- 코드 작성 시 작업내용을 명확히 명시하기</label>
+                            <label>- 팀원이 모르는 것은 다 함께 고민해보기</label>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="section-02" class="scroll-m-[104px] flex flex-col w-full gap-[32px] mt-[230px]">
+                    <!-- 멤버 소개란 -->
+                    <div class="flex w-full h-[120px] items-center justify-center">
+                        <div class="text-[64px] whitespace-nowrap">Our Members</div>
+                    </div>
+                    <div class="grid grid-rows-2 grid-cols-3 gap-[24px] min-w-[424px] max-1400:grid-cols-2 max-1400:grid-rows-3 max-920:grid-cols-1 max-920:grid-rows-6">
+                        <!-- 화면 크기에 따라 그리드 배치 변환시키기(3:2 -> 2:3 -> 1:6) -->
+                        <!-- 이너 래퍼 -->
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_이길환.jpg" alt="...">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">이길환</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">ENTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">화이팅!!!!!!!!</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton1"class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div src="../memberPage/profile_이길환.jpg"class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_정원석.jpeg">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정원석</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">잘 부탁드리겠습니다.</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton2"class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_정예림.jpg">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정예림</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">잘부탁드려요</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton3" class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_추종윤.png">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">추종윤</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTJ</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">비전공자라 잘 부탁드리겠습니다.(꾸벅)</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton4"class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_정지윤.png">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">정지윤</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">INTP</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">열심히 해보겠습니다.</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton5" class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-auto w-[400px] h-[280px] border-[2px] border-white p-[16px] rounded-[16px]">
+                            <!-- 멤버카드(멤버 정보 간단히 표시) -->
+                            <div class="flex w-full h-full bg-[rgba(72,72,72,0.1)] rounded-[8px] p-[4px]">
+                                <!-- 이너래퍼 -->
+                                <div class="p-[8px] min-w-[140px] w-[140px] h-[220px]">
+                                    <!-- 프로필사진(좌측) --><img src="../memberPage/profile_오강욱.png.jpg">
+                                </div>
+                                <div class="flex flex-col m-0 p-[8px] w-full h-full justify-between">
+                                    <!-- 우측 컨테이너 -->
+                                    <div class="leading-[28px] w-full p-[8px] rounded-[8px] bg-[rgba(0,0,0,0.3)]">
+                                        <!-- 멤버 정보 -->
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 이름 -->
+                                            <label class="text-label">NAME : </label>
+                                            <label class="text-description">오강욱</label>
+                                        </div>
+                                        <div class="flex gap-[6px]">
+                                            <!-- 멤버 Mbti -->
+                                            <label class="text-label">MBTI : </label>
+                                            <label class="text-description">ENFJ</label>
+                                        </div>
+                                        <div class="flex flex-col mt-[24px] gap-[4px]">
+                                            <!-- 짧은 인삿말 -->
+                                            <label class="text-label">[GREETING]</label>
+                                            <label class="text-description">열심히 끝까지 해보겠습니다. 잘부탁드려용</label>
+                                        </div>
+                                    </div>
+                                    <button id="mybutton6" class="member-btn rounded-[8px] p-[8px] text-[14px] leading-[22px] cursor-pointer text-white bg-black align-bottom transition-all delay-0 duration-150 ease-in-out hover:shadow-[4px_4px_6px_-1px_rgba(0,0,0,0.7)] hover:bg-[rgba(0,0,0,0.8)] hover:text-[rgba(200,170,110,0.2)]">
+                                        <!-- 멤버 개별 상세 페이지 이동 버튼(호버링 시 화살표가 움직이는 애니메이션 추가하기 -->
+                                        Go To Private
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="section-03" class="scroll-m-[104px] w-full mt-[220px]">
+                    <!-- 방명록 -->
+                    <div class="flex w-full my-[32px] text-[48px] text-white items-center justify-center whitespace-nowrap">
+                        <label>Visitor's Comments</label>
+                    </div>
+                    <div class="guestbook-entry-form flex min-w-[480px] w-full h-[fit] gap-[8px]" id="postingbox">
+                        <div class="flex flex-col h-[140px] w-fit gap-[8px]">
+                            <!-- 이름/비밀번호 -->
+                            <div class="">
+                                <input class="input-shadow p-[6px] rounded-[6px] outline-none" id="name" placeholder="Visitor's Name">
+                            </div>
+                            <div class="">
+                                <input class="input-shadow p-[6px] rounded-[6px] outline-none" type="password" id="password" placeholder="Password">
+                            </div>
+                            <button class="btn-submit h-full w-full p-[4px] border-[2px] border-white bg-black text-white text-[22px] font-semibold rounded-[16px] whitespace-nowrap transition-all delay-0 duration-150 ease-in-out hover:bg-white" id="guestbook" type="button">submit</button>
+                        </div>
+                        <div class="flex flex-col h-[140px] w-full gap-[4px]">
+                            <div class="w-full">    
+                                <input class="input-shadow w-full p-[6px] rounded-[6px] outline-none" id="title" placeholder="Title">
+                            </div>
+                            <div class="h-full w-full">
+                                <textarea class="input-shadow h-full w-full p-[6px] rounded-[6px] outline-none" id="content" placeholder="Comments..."></textarea>
+                            </div>        
+                        </div>
+                        <button id="refresh" class="border-[2px] border-white rounded-[12px] bg-black text-white text-[22px] w-[68px] p-[3px] whitespace-nowrap group transition-all delay-50 duration-500 ease-in hover:bg-white hover:text-black" type="button">
+                            <i class="fas fa-sync-alt refresh-icon btn-refresh transition-all delay-50 duration-500 ease-in group-hover:rotate-180 group-hover:text-black"></i>
+                        </button>
+                        
+                    </div>
+
+                    <div class="flex flex-col mt-[32px] gap-[12px]">
+                        <div class="next-prev-btn flex gap-[8px]">
+                            <button class="btn-page" id="first-page" type="button">
+                                <i class="fa-solid fa-caret-left"></i>
+                                <span class="text-[24px]">prev</spans>
+                            </button>
+                            <button class="btn-page" id="next-page" type="button">
+                                <span class="text-[24px]">next</span>
+                                <i class="fa-solid fa-caret-right"></i>
+                            </button>
+                        </div>
+                        <div class="guestbook flex flex-col w-full gap-[8px] mb-[60px]" id="guestbook-entries"></div>
+                    </div>
+                </div>  
+            </div>
+        </main>
+
+        <script>
+            document.getElementById('btn-top').addEventListener('click', function() {
+                document.getElementById('section-01').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-om').addEventListener('click', function() {
+                document.getElementById('section-02').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-vc').addEventListener('click', function() {
+                document.getElementById('section-03').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const scrollPosition = localStorage.getItem("scrollPosition");
+                if (scrollPosition) {
+                    window.scrollTo(0, parseInt(scrollPosition, 10));
+                    localStorage.removeItem("scrollPosition"); // 위치를 복원한 후에는 저장된 위치 삭제
+                }
+            });
+
+            document.getElementById("refresh").addEventListener("click", function() {
+                localStorage.setItem("scrollPosition", window.scrollY);
+                window.location.reload();
+            });
+        </script>
+
+        <script type="module">
+            // Firebase SDK 라이브러리 가져오기
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+            import { getFirestore, collection, addDoc, getDocs, doc, getDoc, deleteDoc, updateDoc, orderBy, query, startAfter, limit } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+            // Firebase 구성 정보 설정
+            const firebaseConfig = {
+                apiKey: "AIzaSyAKylteJBCVCJpvE4ILvOasBoBJYE1fuCc",
+                authDomain: "sparta-ecc7c.firebaseapp.com",
+                projectId: "sparta-ecc7c",
+                storageBucket: "sparta-ecc7c.appspot.com",
+                messagingSenderId: "358776364318",
+                appId: "1:358776364318:web:da316a5aa0631766153d0f",
+                measurementId: "G-8LG1X04864"
+            };
+    
+            // Firebase 인스턴스 초기화
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+    
+            document.getElementById("guestbook").addEventListener("click", async () => {
+                let name = $('#name').val();
+                let title = $('#title').val();
+                let password = $('#password').val();
+                let date = new Date(); //현재시간을 date변수에 대입
+                let content = $('#content').val();
+    
+                let docData = {
+                    name: name,
+                    title: title,
+                    password: password,
+                    date: date,
+                    content: content
+                };
+                await addDoc(collection(db, "guestbook"), docData);
+                alert('저장 완료');
+                window.location.reload();
+            });
+
+            document.getElementById('mybutton1').addEventListener('click',function(){
+                window.location.href='../memberPage/이길환.html'
+            })
+            document.getElementById('mybutton2').addEventListener('click',function(){
+                window.location.href='../memberPage/정원석.html'
+            })
+            document.getElementById('mybutton3').addEventListener('click',function(){
+                window.location.href='../memberPage/정예림.html'
+            })
+            document.getElementById('mybutton4').addEventListener('click',function(){
+                window.location.href='../memberPage/추종윤.html'
+            })
+            document.getElementById('mybutton5').addEventListener('click',function(){
+                window.location.href='../memberPage/정지윤.html'
+            })
+            document.getElementById('mybutton6').addEventListener('click',function(){
+                window.location.href='../memberPage/오강욱.html'
+            })
+
+            const pagecount = 5;
+            let lastVisibleDoc = null;
+    
+            async function loadGuestbookEntries() {
+                const guestbookRef = collection(db, "guestbook");
+                // const docs = await getDocs(query(guestbookRef, orderBy("date", "desc")));
+                let q;
+
+                // 
+                if (lastVisibleDoc) {
+                    //만약lastVisibleDoc가 null이 아니면 즉 첫페이지가 아니라면
+                    //해당문서 이후의 문서를 가져오는 쿼리
+                    q = query(guestbookRef, orderBy("date", "desc"), startAfter(lastVisibleDoc), limit(pagecount));
+                } else {
+                    //첫페이지라면 그냥 페이지내에서 보여주고자하는 갯수(pagecount)만큼만 가져옴
+                    q = query(guestbookRef, orderBy("date", "desc"), limit(pagecount));
+                }
+
+                const snapshot = await getDocs(q);
+                // 
+
+
+                let entriesHtml = '';
+
+                if (snapshot.docs.length > 0) {
+                    lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
+    
+                    snapshot.forEach((doc) => {
+                        let data = doc.data();
+                        let date = data.date.toDate();
+                        let formattedDate = date.toLocaleString();
+                        entriesHtml += `
+                            <div class="relative flex bg-[rgba(75,75,75,0.2)] border-[1px] border-[rgb(144,144,144,0.3)] p-[12px] rounded-[12px] max-">
+                                <div class="relative text-white flex w-full justify-between max-sd:flex-col max-sd:items-center">
+                                    <div class="relative flex w-[calc(100%-210px)] mr-[12px] gap-[6px] max-sd:w-full">
+                                        <div class="relative flex flex-col w-full">
+                                            <div class="flex">
+                                                <div class="comments-name text-black whitespace-nowrap" style="-webkit-text-stroke-width: 0.6px; -webkit-text-stroke-color: white">[${data.name}]</div>
+                                                <div class="ml-[2px] text-[rgba(255,255,255,0.9)] whitespace-nowrap" style="text-shadow: 0 0 6px skyblue">'s comments</div>
+                                                <div class="ml-[32px]" style="text-shadow: 0 0 3px skyblue;"><${data.title}></div>
+                                            </div>
+                                            <div class="relative w-full h-full bg-[rgba(89,89,89,0.2)] text-[rgba(189,189,189,0.9)] px-[8px] py-[4px] rounded-[8px] whitespace-normal break-all">
+                                                ${data.content}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex flex-col w-[210px] gap-[4px] max-sd:w-full">
+                                        <div class="flex whitespace-nowrap">
+                                            ${formattedDate}
+                                            <div class="flex text-[9px] text-[rgba(144,144,144,0.7)] items-end">written</div>
+                                        </div>
+                                        <input class="input-shadow w-full mb-[2px] p-[6px] rounded-[6px] outline-none"" type="password" placeholder="password" id="password-${doc.id}">
+                                        <div class="grid grid-cols-2 gap-[12px]">
+                                            <button class="btn-edit w-full border-[1px] border-white bg-black p-[2px] rounded-[6px] hover:shadow-[0_0_6px_0_skyblue] hover:bg-white hover:text-black" data-id="${doc.id}">edit</button>
+                                            <button class="btn-delete w-full border-[1px] border-white bg-black p-[2px] rounded-[6px] hover:shadow-[0_0_6px_0_skyblue] hover:bg-white hover:text-black" data-id="${doc.id}">delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    document.getElementById("guestbook-entries").innerHTML = entriesHtml;
+                    //id가 guestbook-entries인 요소를 찾아 그요소의 innerHTML속성을 entriesHtml변수의 값으로 설정
+                    //간단하게 요약하면 위의 묶여있는 방명록들이 id가 guestbook-entries로 설정되어 html형식으로 붙여진다는 뜻이다.
+    
+                    document.querySelectorAll(".btn-delete").forEach(button => {
+                        button.addEventListener("click", async (event) => {
+                            //btn-delete(삭제속성)을가진 버튼에 삭제기능을추가코드
+                            let docId = event.target.getAttribute("data-id");
+                            //클릭된버튼의 "data-id"속성 값을 가져와 docId 변수에 저장
+                            let passwordInput = document.getElementById(`password-${docId}`).value;
+                            //해당 문서id와 일치하는 비밀번호 입력필드의 값을가져옴
+                            let docRef = doc(db, "guestbook", docId);
+                            //문서를참조
+                            let docSnapshot = await getDoc(docRef);
+                            
+                            if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
+                                //해당스냅샷이 존재하고 비밀번호가 맞으면
+                                await deleteDoc(docRef);
+                                alert("삭제 완료");
+                                window.location.reload();
+                            } else {
+                                alert("비밀번호가 틀립니다");
+                            }
+                        });
+                    });
+    
+
+                    document.querySelectorAll(".btn-edit").forEach(button => {
+                        button.addEventListener("click", async (event) => {
+                            let docId = event.target.getAttribute("data-id");
+                            let passwordInput = document.getElementById(`password-${docId}`).value;
+                            let docRef = doc(db, "guestbook", docId);
+                            let docSnapshot = await getDoc(docRef);
+        
+                            if (docSnapshot.exists() && docSnapshot.data().password === passwordInput) {
+                                let newContent = prompt("새로운 내용을 입력하세요", docSnapshot.data().content);
+                                if (newContent !== null) {
+                                    //새내용은 비어있을수없음
+                                    await updateDoc(docRef, { content: newContent });
+                                    //새내용을 받아와 doc을 업데이트
+                                    alert("수정 완료");
+                                    window.location.reload();
+                                }
+                            } else {
+                                alert("비밀번호가 틀립니다");
+                            }
+                        });
+                    });
+                }
+            }
+            document.getElementById("next-page").addEventListener("click", loadGuestbookEntries);
+        
+            document.getElementById("first-page").addEventListener("click", () => {
+                lastVisibleDoc = null;
+                loadGuestbookEntries();
+            });
+        
+            loadGuestbookEntries();
+        </script>
+    </body>
+</html>

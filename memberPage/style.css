@@ -1,0 +1,360 @@
+body {
+    background-color: rgb(20, 27, 59);
+    color: rgb(12, 12, 12);
+    /* 텍스트 색상을 흰색으로 설정하여 읽기 쉽게 함 */
+    margin: 0;
+    padding: 0;
+    font-family: "Cinzel Decorative", serif;
+    /* 폰트 적용 */
+}
+
+/* 헤더 */
+header {
+    color: rgba(223, 184, 84, 0.872);
+    width: auto;
+    background-position: center;
+    height: 250px;
+    background-size: cover;
+    margin: auto auto 50px auto;
+    position: relative;
+    /* 헤더가 절대 위치된 요소를 포함하도록 설정 */
+}
+
+.center-text {
+    position: relative;
+    z-index: 1;
+    /* 텍스트를 앞으로 보내기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #b69d2b;
+    font-size: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* 배경 투명도 조절 */
+    margin: auto;
+}
+
+.profile {
+    flex: 1;
+    transform: translateZ(70px);
+}
+
+.userInfo {
+    flex: 8;
+    padding-left: 20px;
+    transform: translateZ(70px);
+}
+
+.lol {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.sc-8060fcde-0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* 비디오를 뒤로 보내기 */
+}
+
+.sc-fa238766-0 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.icon {
+    margin-right: 10px;
+}
+
+
+/* 1박스 */
+.box1 {
+    width: auto;
+    height: auto;
+    background-color: rgb(254, 254, 254);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 50px;
+    margin-bottom: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-color: rgb(3, 3, 3);
+    border-style: solid;
+    animation: picture 1.5s ease-in;
+    font-weight: bold;
+    perspective: 500px;
+    animation: box1-ani 1.6s infinite linear alternate;
+    transform-style: preserve-3d;
+}
+
+@keyframes box1-ani {
+    0% {
+        transform: rotateY(-20deg);
+    }
+
+    100% {
+        transform: rotateY(20deg);
+    }
+}
+
+/* 2박스 */
+.box2 {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 50px;
+  margin-bottom: 200px;
+  animation: move_picture 0.5s ease-out;
+}
+
+/* 3,4,5,6,박스 */
+.box3,
+.box4,
+.box5,
+.box6 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 30%;
+  height: 500px;
+  border-style: solid;
+  border-color: #b69d2b;
+  border-width: 1px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 30px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  animation: move_picture 1s ease-out forwards;
+  opacity: 0;
+  word-break: break-all;
+  font-weight: bold;
+}
+
+/* 텍스트가 넘치지 않도록*/
+.box3 p,
+.box4 p,
+.box5 p,
+.box6 p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+
+.box3 {
+    animation-delay: 0s;
+}
+
+.box4 {
+    animation-delay: 1s;
+}
+
+.box5 {
+    animation-delay: 2s;
+}
+
+.box6 {
+    animation-delay: 3s;
+}
+
+@keyframes picture {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes move_picture {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text {
+    color: #b69d2b;
+    font-size: 25px;
+    transform: translateZ(70px);
+}
+
+.info-text {
+    height: 500px;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mbti-text {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+}
+
+
+.label {
+    display: flex;
+  position: absolute;
+  top: -20px;
+  height: 50px;
+  width: 150px;
+  border-width: 3px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #b69d2b;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  align-items: center;
+}
+
+.name-text {
+    color: #b69d2b;
+    font-size: 50px;
+    transform: translateZ(70px);
+}
+
+.label-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #b69d2b;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.link-text {
+    color: #b69d2b;
+    font-size: 25px;
+}
+
+.form-control {
+    flex-grow: 1;
+}
+
+.img1 {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.form-control {
+    flex-grow: 1;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    /* 가로 길이를 100%로 설정 */
+    background-image: url(./sparata.png);
+    /* 배경 이미지 설정 */
+    color: #b69d2b;
+    /* 글자 색상 설정 */
+    background-color: rgb(9, 9, 9);
+    /* 배경 색상 설정 */
+    background-position: center;
+    /* 배경 이미지의 위치를 가운데로 설정 */
+    height: 200px;
+    /* 높이를 150px로 설정 */
+    background-size: cover;
+    /* 배경 이미지를 요소의 크기에 맞게 조정 */
+    display: flex;
+    /* Flexbox 사용 */
+    align-items: center;
+    /* 수직 정렬 */
+    padding-left: 20px;
+    /* 왼쪽 패딩 추가 */
+}
+
+.img2 {
+    width: 50px;
+    /* 너비를 50px로 설정 */
+    height: 50px;
+    /* 높이를 50px로 설정 */
+    margin-right: 10px;
+    /* 이미지와 텍스트 사이에 간격 추가 */
+}
+
+.sharpwind-text {
+    margin: 0;
+    /* 기본 마진 제거 */
+    font-weight: bold;
+    /* 글자 굵기를 볼드로 설정 */
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 800px) {
+    .box2 {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .box3,
+    .box4,
+    .box5,
+    .box6 {
+        width: 80%;
+        margin: 10px auto;
+        height: auto;
+    }
+
+    .info-text {
+        height: auto;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .mbti-text {
+        font-size: 40px;
+    }
+
+    .label-text {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+
+body {
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Cinzel Decorative', serif;
+    margin: 0px;
+    height: 100%;
+    position: relative;
+}
+
+.section-03 {
+    color: black;
+}
+
+.quick-nav {
+    padding: 8px;
+    font-size: 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    white-space: nowrap;
+}
+
+.quick-nav:hover {
+    color: rgba(200, 170, 110,0.2);
+    /* background-color: rgba(200, 170, 110, 0.1); */
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: rgb(200, 170, 110);
+}
+
+.team-text {
+    color: white;
+    text-shadow: 0 0 10px skyblue;
+    font-size: 20px;
+}
+
+.member-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+}
+
+.text-label {
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 0 3px black;
+}
+
+.text-description {
+    color: white;
+    text-shadow: 0 0 10px skyblue;
+}
+
+.member-btn:hover {
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: rgb(200, 170, 110);
+}
+
+@media (max-width: 1280px) {
+    .team-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 760px) {
+    .team-text {
+        font-size: 16px;
+    }
+}
+
+
+@keyframes blink-text {
+    0% {
+        text-shadow: 0 0 12px skyblue;
+    }
+    50% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+    100% {
+        text-shadow: 0 0 12px skyblue;
+    }
+}
+
+@keyframes blink-text2 {
+    0% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+    50% {
+        text-shadow: 0 0 22px transparent;
+    }
+    100% {
+        text-shadow: 0 0 12px goldenrod;
+    }
+}
+
+@keyframes blink-box {
+    0% {
+        box-shadow: 0 0 8px 3px skyblue;
+    }
+    50% {
+        box-shadow: 0 0 8px 3px goldenrod;
+    }
+    100% {
+        box-shadow: 0 0 8px 3px skyblue;
+    }
+}
+
+@keyframes blink-text-sky {
+    0% {
+        text-shadow: 0 0 3vw skyblue;
+    }
+    50% {
+        text-shadow: 0 0 3vw transparent;
+    }
+    100% {
+        text-shadow: 0 0 3vw skyblue;
+    }
+}
+
+.text-welcome {
+    animation: blink-text-sky 4s infinite;
+}
+
+.btn-submit {
+    animation: blink-box 3s infinite;
+}
+
+.btn-submit:hover {
+    animation: blink-text 3s infinite;
+}
+
+.input-shadow {
+    caret-color: rgba(255,255,255,0.5);
+    background-color: rgba(75,75,75,0.2);
+    border: 1px solid rgba(144,144,144,0.3);
+}
+
+.input-shadow:focus-visible {
+    animation: blink-box 3s infinite;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.comments-name {
+    animation: blink-text2 3s infinite;
+}
+
+.btn-page {
+    /* flex text-[32px] leading-[32px] gap-[4px] */
+    display: flex;
+    font-size: 32px;
+    line-height: 32px;
+    gap: 4px;
+    color: white;
+    text-shadow: 0 0 6px skyblue;
+    -webkit-text-stroke-width: 0.7px;
+    font-weight: 500;
+}
+
+.btn-page:hover {
+    text-shadow: 0 0 6px goldenrod;
+    color: black;
+    -webkit-text-stroke-color: goldenrod;
+}
+
